@@ -1,0 +1,67 @@
+/* Vars */
+@import "../../styles/vars/vars.css";
+
+.taskInputs {
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.inputItem {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.inputItem label {
+    color: var(--color-description);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.inputItem input {
+    border-radius: 5px;
+    padding: 9px;
+    width: 20vw;
+}
+
+.inputItem input:focus {
+    outline: 2px solid rgb(0, 230, 122);
+}
+
+
+.btnItem {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.addTask {
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    width: 60px;
+    cursor: pointer;
+}
+
+.addTask:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 1000px) {
+    .taskInputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+    .inputItem{
+        gap: 10px;
+    }
+
+    .inputItem input{
+        width: 100%;
+    }
+}

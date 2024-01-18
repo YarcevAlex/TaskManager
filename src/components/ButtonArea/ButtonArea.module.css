@@ -1,0 +1,29 @@
+@import "../../styles/vars/vars.css";
+
+
+.btnArea {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    background-color: rgba(87, 87, 87, 0.6);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:focus-visible {
+    outline: 2px solid rgb(0, 230, 122);
+    outline-offset: 2px;
+}
+
+.active {
+    background-color: rgb(4, 192, 104);
+}

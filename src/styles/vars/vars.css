@@ -1,0 +1,10 @@
+:root {
+    /*    Color  */
+    --color-title: rgba(255, 255, 255, 0.80);
+    --color-description: rgba(255, 255, 255, 0.90);
+
+    /*    Fonts  */
+    --font-montserrat: "Montserrat";
+    /*--font-calibri: "Calibri";*/
+
+}
