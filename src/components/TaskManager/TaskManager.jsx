@@ -15,7 +15,12 @@ export const TaskManager = () => {
   const [newDescription, setNewDescription] = useState('');
   const [isCompletedScreen, setIsCompletedScreen] = useState(false);
 
+
+  //Функция добавляет новый Task , с проверкой на пустой value
   const handleAddNewTask = () => {
+    if (newTaskTitle.trim() === "" || newDescription.trim() === "") {
+      return alert("Заполните поля ввода данных")
+    }
     let newTaskOgj = {
       title: newTaskTitle,
       description: newDescription,
@@ -26,9 +31,13 @@ export const TaskManager = () => {
     setAllTask(updatedTaskArray);
 
     localStorage.setItem('taskList', JSON.stringify(updatedTaskArray));
-    setNewDescription('');
+
     setNewTaskTitle('');
+    setNewDescription('');
+    //Лютый костыль ))))
+    location.reload()
   }
+
 
   useEffect(() => {
     let savedTasks = JSON.parse(localStorage.getItem('taskList'));
@@ -44,7 +53,7 @@ export const TaskManager = () => {
     }
   }, []);
 
-
+//Функция отвечающая за отслеживание времени выполнения Task
   const handleTaskComplete = index => {
     const date = new Date();
     const dd = date.getDate();
@@ -62,7 +71,6 @@ export const TaskManager = () => {
     };
 
     let updatedCompletedList = [...completedTask, filteredTask];
-    console.log(updatedCompletedList);
     setCompletedTask(updatedCompletedList);
     localStorage.setItem(
       'completedTask',
@@ -71,6 +79,7 @@ export const TaskManager = () => {
     handleTaskDelete(index);
   };
 
+  //Функция для удаления Task из общего списка
   const handleTaskDelete = index => {
     let reducedTask = [...allTask];
     reducedTask.splice(index, 1);
@@ -78,7 +87,7 @@ export const TaskManager = () => {
     setAllTask(reducedTask);
   };
 
-
+//Функция по удалению Task из списка выполненых тасков
   const handleCompletedTaskDelete = index => {
     let reducedCompletedTask = [...completedTask];
     reducedCompletedTask.splice(index, 1);
@@ -95,12 +104,13 @@ export const TaskManager = () => {
       <div className={styles.taskWrapper}>
         <InputFields allTask={allTask}
                      handleAddNewTask={handleAddNewTask}
+                     setNewTaskTitle={setNewTaskTitle}
+                     setNewDescription={setNewDescription}
         />
         <ButtonArea isCompletedScreen={isCompletedScreen}
                     setIsCompletedScreen={setIsCompletedScreen}
         />
         <TaskList allTask={allTask}
-                  setAllTask={setAllTask}
                   isCompletedScreen={isCompletedScreen}
                   completedTask={completedTask}
                   handleTaskDelete={handleTaskDelete}

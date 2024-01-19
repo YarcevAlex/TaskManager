@@ -1,17 +1,17 @@
 //styles
 import styles from "./ButtonArea.module.css";
 
-export const ButtonArea = (props) => {
+export const ButtonArea = ({isCompletedScreen, setIsCompletedScreen}) => {
   return (
     <div className={styles.btnArea}>
       <button
-        className={props.isCompletedScreen === false ? `${styles.active}` : ''}
-        onClick={() => props.setIsCompletedScreen(false)}>
+        className={isCompletedScreen === false ? `${styles.active}` : ''}
+        onClick={() => setIsCompletedScreen(false)}>
         Task
       </button>
       <button
-        className={props.isCompletedScreen === true ? `${styles.active}` : ''}
-        onClick={() => props.setIsCompletedScreen(true)}>
+        className={isCompletedScreen === true ? `${styles.active}` : ''}
+        onClick={() => setIsCompletedScreen(true)}>
         Completed
       </button>
     </div>

@@ -1,5 +1,7 @@
 //styles
 import styles from "./TaskList.module.css";
+
+//Component
 import {CompletedTask} from "../CompletedTask/CompletedTask.jsx";
 
 
@@ -13,7 +15,7 @@ export const TaskList = ({
                          }) => {
   return (
     <>
-      <ul className={styles.completedTask}>
+      <ul className={styles.taskList}>
         {isCompletedScreen === false &&
           allTask.map((task, index) => {
             return (

@@ -8,8 +8,8 @@ export const CompletedTask = ({isCompletedScreen, completedTask, handleCompleted
         completedTask.map((item, index) => (
           <li className={styles.taskItem} key={index}>
             <div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <h3 className={styles.title}>{item.title}</h3>
+              <p className={styles.description}>{item.description}</p>
               <p><i>Выполнено : {item.completedOn}</i></p>
             </div>
             <div className={styles.btn}>
