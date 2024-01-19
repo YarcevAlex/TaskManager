@@ -1,18 +1,20 @@
 //styles
 import styles from "./InputFields.module.css";
 
-export const InputFields = () => {
-  return(
+
+export const InputFields = (props) => {
+
+  return (
     <div className={styles.taskInputs}>
       <div className={styles.inputItem}>
-        <label>Exercise:</label>
+        <label>Название задания:</label>
         <input
           type="text"
           placeholder="Как называется ваше задание"
         />
       </div>
       <div className={styles.inputItem}>
-        <label>Description:</label>
+        <label>Описание:</label>
         <input
           type="text"
           placeholder="Описание вашего задания"
@@ -22,6 +24,7 @@ export const InputFields = () => {
         <button
           className={styles.addTask}
           type="button"
+          onClick={props.handleAddNewTask}
         >
           Add
         </button>

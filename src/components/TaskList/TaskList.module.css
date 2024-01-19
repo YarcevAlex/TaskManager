@@ -2,7 +2,6 @@
 
 
 .taskList {
-    padding: 40px 0 0;
     display: flex;
     flex-direction: column;
 }
@@ -47,19 +46,9 @@
     cursor: pointer;
 }
 
-.icon:hover {
-    color: red;
-
+.completedTask{
+    display: flex;
+    flex-direction: column;
 }
 
-.check-icon {
-    font-size: 22px;
-    cursor: pointer;
-    color: rgb(0, 230, 122);
-    margin-left: 10px;
-    margin-bottom: 5px;
-}
 
-.check-icon:hover {
-    color: rgb(4, 192, 104);
-}

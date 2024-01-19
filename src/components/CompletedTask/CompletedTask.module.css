@@ -1,0 +1,16 @@
+
+
+.taskItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #414040;
+    padding: 25px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.btn div {
+    font-size: 35px;
+    cursor: pointer;
+}
